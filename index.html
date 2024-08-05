@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skelbimai</title>
+    <link href="./css/style.css" rel="stylesheet" />
+    <script src="./js/bendras.js"></script>
+    <script src="./js/createPost.js"></script>
+    <script src="./js/getPosts.js"></script>
+</head>
+<body>
+    <div style="max-width: fit-content; margin-left: auto; margin-right: auto;">
+        <h1>SKELBIMU PORTALAS</h1>
+        <label><b>Pavadinimas</b></label><br>
+        <input type="text" id="postTitle" required><br>
+        <label><b>Tel. nr.</b></label><br>
+        <input type="number" id="postNumber" required><br>
+        <label><b>Skelbimas</b></label><br>
+        <input style="height: 200px; width: 400px;" type="text" id="postContent" required><br>
+        <button type="button" onclick="createPost()">Skelbti</button>
+        </div>
+    </div>
+    <div style="border-top: solid; border-width: 1px; margin-top: 10px;"></div>
+    <div id="posts">
+        a
+    </div>
+</body>
+</html>
