@@ -5,7 +5,7 @@ LABEL authors="sergejus"
 WORKDIR /app
 
 RUN apt-get update &&  \
-    apt-get install -y git 
+    apt-get install -y git
 
 WORKDIR /git
 RUN git clone https://github.com/DariusSo/PostingPortalFront.git .

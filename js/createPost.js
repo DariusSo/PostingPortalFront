@@ -26,12 +26,10 @@ function createPost(){
             
         });
         const response1 = await rawResponse.text();
-        if(rawResponse.status == 501){
+        if(rawResponse.status != 201){
           alert(response1);
         }else{
-          document.getElementById("postTitle").value = "";
-          document.getElementById("postNumber").value = "";
-          document.getElementById("postContent").value = "";
+          
           fetchPosts(); 
         }
       })();

@@ -1,3 +1,4 @@
+var loadMorePostsId = 0;
 async function fetchPosts() {
     try {
         const response = await fetch('http://127.0.0.1:8080/getPosts', {
@@ -27,6 +28,7 @@ function displayPosts(posts) {
         var htmlPost = document.createElement("div");
         htmlPost.innerHTML = showPost(post);
         postTable.append(htmlPost);
+        loadMorePostsId = post.id;
     
     });
 }
@@ -50,3 +52,46 @@ function showPost(post){
     '</div>' +
 '</div>'
 }
+async function loadMorePosts(id){
+    try {
+        const response = await fetch('http://127.0.0.1:8080/getMorePosts?id=' + parseInt(id), {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+        });
+    
+        const posts = await response.json();
+        
+        if(!Object.keys(posts).length){
+          console.log("no data found");
+      }else{
+          displayMorePosts(posts);
+        }
+        
+    } catch (error) {
+      console.log(error);
+    }
+
+}
+function displayMorePosts(posts) {
+    var postTable = document.getElementById("posts")
+    posts.forEach(post => {
+        var htmlPost = document.createElement("div");
+        htmlPost.innerHTML = showPost(post);
+        postTable.append(htmlPost);
+        loadMorePostsId = post.id;
+    
+    });
+}
+var timeout;
+    window.onscroll = function(element) {
+        clearTimeout(timeout);  
+        timeout = setTimeout(function() {
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
+            loadMorePosts(loadMorePostsId);
+         }
+    }, 100);
+      
+   };
