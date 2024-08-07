@@ -24,23 +24,29 @@ function displayPosts(posts) {
     var postTable = document.getElementById("posts")
     postTable.innerHTML = '';
     posts.forEach(post => {
-        var number = document.createElement("p");
-        number.innerHTML = post.number
-        var createdAt = document.createElement("p");
-        createdAt = post.createdAt;
-        var title = document.createElement("p");
-        title.innerHTML = post.title;
-        var content = document.createElement("p");
-        content = post.content;
-        var line = document.createElement("div");
-        line.style.borderBlock = "solid";
-        line.style.borderBlockWidth = "1px";
-        
-        postTable.append(number);
-        postTable.append(createdAt);
-        postTable.append(title);
-        postTable.append(content);
-        postTable.append(line);
+        var htmlPost = document.createElement("div");
+        htmlPost.innerHTML = showPost(post);
+        postTable.append(htmlPost);
     
     });
+}
+function showPost(post){
+    var dt1 = new Date(post.createdAt)
+    return '<div class="max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md">' +
+    '<div class="flex justify-between items-center">' +
+        '<span class="font-light text-gray-600">'+ dt1 +'</span>' +
+    '</div>' +
+    '<div class="mt-2">' +
+        '<a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">'+ post.title +'</a>' +
+        '<p class="mt-2 text-gray-600">'+ post.content +'</p>' +
+    '</div>' +
+    '<div class="flex justify-between items-center mt-4">' +
+        
+        '<div>' +
+            '<a class="flex items-center" href="#">' +
+                '<h1 class="text-gray-700 font-bold">'+ post.number +'</h1>' +
+            '</a>' +
+        '</div>' +
+    '</div>' +
+'</div>'
 }

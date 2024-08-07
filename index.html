@@ -6,22 +6,56 @@
     <script src="./js/bendras.js"></script>
     <script src="./js/createPost.js"></script>
     <script src="./js/getPosts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div style="max-width: fit-content; margin-left: auto; margin-right: auto;">
-        <h1>SKELBIMU PORTALAS</h1>
-        <label><b>Pavadinimas</b></label><br>
-        <input type="text" id="postTitle" required><br>
-        <label><b>Tel. nr.</b></label><br>
-        <input type="number" id="postNumber" required><br>
-        <label><b>Skelbimas</b></label><br>
-        <input style="height: 200px; width: 400px;" type="text" id="postContent" required><br>
-        <button type="button" onclick="createPost()">Skelbti</button>
+    <div class="bg-indigo-500 w-full h-16 content-center text-center text-white font-bold">POSTING APP</div>
+    <div class="heading text-center font-bold text-2xl m-5 text-gray-800">Post something</div>
+  <div class="editor mx-auto w-10/12 flex flex-col text-gray-800 border border-gray-300 p-4 shadow-lg max-w-2xl mb-10">
+    <input class="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" spellcheck="false" placeholder="Title" type="text" id="postTitle" required>
+    <input class="title bg-gray-100 border border-gray-300 p-2 mb-4 outline-none" spellcheck="false" placeholder="Phone Number" type="number" id="postNumber" required>
+    <textarea class="description bg-gray-100 sec p-3 h-60 border border-gray-300 outline-none" spellcheck="false" placeholder="Describe everything about this post here" id="postContent" required></textarea>
+    
+    <div class="buttons flex">
+      
+      <div class="btn border border-indigo-500 p-1 px-4 mt-4 font-semibold cursor-pointer text-gray-200 ml-auto bg-indigo-500 hover:bg-indigo-600" onclick="createPost()">Post</div>
+    </div>
+  </div>    
+    <div style="border-top: solid; border-width: 1px; border-color: grey; opacity: 0.5"></div>
+    <div id="posts">
+        <div class="max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md">
+            <div class="flex justify-between items-center">
+                <span class="font-light text-gray-600">mar 10, 2019</span>
+            </div>
+            <div class="mt-2">
+                <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">Accessibility tools for designers and developers</a>
+                <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!</p>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+                
+                <div>
+                    <a class="flex items-center" href="#">
+                        <h1 class="text-gray-700 font-bold">Khatab wedaa</h1>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
-    <div style="border-top: solid; border-width: 1px; margin-top: 10px;"></div>
-    <div id="posts">
-        a
-    </div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9387793805447969"
+     crossorigin="anonymous"></script>
+<!-- a -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9387793805447969"
+     data-ad-slot="6337089580"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    
 </body>
 </html>
